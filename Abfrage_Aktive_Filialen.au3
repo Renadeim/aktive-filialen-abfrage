@@ -22,9 +22,9 @@ Func _unicenter_sql_open()
 		.Provider = "SQLOLEDB.1"
 		.Properties("Persist Security Info").Value = False
 		.Properties("Initial Catalog").Value = "mdb"
-		.Properties("Data Source").Value = "<SQL_DB_EINFÜGEN>"
-    .Properties("User Id").Value = "<BENUTZERNAME_EINFÜGEN>"
-    .Properties("Password").Value = "<PASSWORT_EINFÜGEN>"
+		.Properties("Data Source").Value = "<SQL_DB_INSERT>"
+    .Properties("User Id").Value = "<USERNAME_INSERT>"
+    .Properties("Password").Value = "<PASSWORD_INSERT>"
 		.Open
 	EndWith
 EndFunc   ;==>_unicenter_sql_open
