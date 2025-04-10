@@ -1,23 +1,23 @@
-# Projekt: Abfrage_Aktive_Filialen.au3
+# Project: Abfrage_Aktive_Filialen.au3
 
-Dieses Skript automatisiert die Abfrage aller aktiven Filialen aus einer SQL-Datenbank und speichert das Ergebnis in einer lokalen Textdatei. Es wurde ursprünglich zur Vereinfachung interner Prozesse entwickelt und stellt eine der Kernkomponenten für datenbasierte Filialauswertungen dar.
+This script automates the retrieval of all active store branches from an SQL database and stores the results in a local text file. It was originally developed to simplify internal processes and serves as one of the core components for data-driven store evaluations.
 
-## 📊 Zweck & Funktion
-- ✅ Verbindung zur internen SQL-Datenbank herstellen
-- ✅ Abfrage aller aktiven Filialen
-- ✅ Ergebnis übersichtlich anzeigen & speichern
+## 📊 Purpose & Function
+- ✅ Establishes a connection to the internal SQL database
+- ✅ Retrieves all active store branches
+- ✅ Displays and stores the result in a clear format
 
-## 🔧 Technologien
-- **Sprache:** AutoIt
-- **Verwendete Module:** `File.au3`, `Array.au3`, `MsgBoxConstants.au3`
-- **Verbindung:** ADODB (SQL-Datenbank)
+## 🔧 Technologies
+- **Language:** AutoIt
+- **Used Modules:** `File.au3`, `Array.au3`, `MsgBoxConstants.au3`
+- **Connection:** ADODB (SQL database)
 
-## 🔹 Verwendung
-1. Stelle sicher, dass AutoIt installiert ist
-2. Passe ggf. den SQL-Befehl oder den Dateipfad an
-3. Starte das Skript per Doppelklick oder aus dem SciTE-Editor
+## 🔹 Usage
+1. Ensure that AutoIt is installed
+2. Adjust the SQL command or file path if necessary
+3. Run the script via double-click or from the SciTE editor
 
-### Beispielcode (Auszug aus dem Skript)
+### Code Example (excerpt from the script)
 ```autoit
 #include <file.au3>
 #include <array.au3>
@@ -28,21 +28,21 @@ _unicenter_sql_open()
 $Filialen = _sql("select last_name from dbo.Haupttabelle where inactive = '0' and last_name < '9999'  order by last_name ASC")
 _ArrayDisplay($Filialen)
 _FileWriteFromArray($AktiveFilialen, $Filialen)
-MsgBox($MB_SYSTEMMODAL, "Aktive Filialen", "Prüfung abgeschlossen!", 0)
+MsgBox($MB_SYSTEMMODAL, "Aktive Filialen", "Check completed!", 0)
 ```
 
-## 📂 Dateien
-- `Abfrage_Aktive_Filialen.au3` – Hauptskript
-- `AktiveFilialen.txt` – Ergebnisdatei (wird automatisch erzeugt)
+## 📂 Files
+- `Abfrage_Aktive_Filialen.au3` – Main script
+- `AktiveFilialen.txt` – Output file (created automatically)
 
-## 📅 Letzte Änderung
-*10. April 2025*
+## 📅 Last Updated
+*April 10, 2025*
 
-## 👥 Autor & Lizenz
-**Autor:** [@Renadeim](https://github.com/Renadeim)  
-**Lizenz:** MIT License
+## 👥 Author & License
+**Author:** [@Renadeim](https://github.com/Renadeim)  
+**License:** MIT License
 
 ---
 
-> ⚡ Dieses Skript ist Teil meiner Sammlung produktiver AutoIt-Automatisierungen für IT & Support.
+> ⚡ This script is part of my collection of productive AutoIt automations for IT & support environments.
 
